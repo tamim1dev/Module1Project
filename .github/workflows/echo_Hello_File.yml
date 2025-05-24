@@ -1,0 +1,19 @@
+# .github/workflows/show-hello-file.yml
+
+name: Show hello.txt content
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  display-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show contents of hello.txt
+        run: cat hello.txt
